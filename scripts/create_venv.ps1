@@ -1,10 +1,10 @@
-# "Template Repository for Research Papers with Python Code"
+# "Separable 2D filters for note onset detection in music signals"
 #
-# Copyright (C) 2021 Peter Steiner
+# Copyright (C) 2023 Peter Steiner
 # License: BSD 3-Clause
 
-python.exe -m venv .virtualenv
+python.exe -m venv venv
 
-.\.virtualenv\Scripts\activate.ps1
-python.exe -m pip install -r requirements.txt
+.\venv\Scripts\activate.ps1
+python.exe -m pip install --editable .
 deactivate

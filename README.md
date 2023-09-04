@@ -1,28 +1,25 @@
-# Template Repository for Research Papers
+# Separable 2D filters for note onset detection in music signals
 ## Metadata
-- Author: [Peter Steiner](mailto:peter.steiner@tu-dresden.de)
-- Conference: Forschungsseminar "Sprache und Kognition", 
-Institute for Acoustics and Speech Communication, Technische Universität Dresden, 
-Dresden, Germany
-- Weblink:
-[https://github.com/TUD-STKS/TemplateRepository](https://github.com/TUD-STKS/TemplateRepository)
+- Author: [Peter Steiner](mailto:peter.steiner@tu-dresden.de),
+  [Kilian Göller](mailto:kilian.goeller@tu-dresden.de), 
+  and [Peter Birkholz](mailto:peter.birkholz@tu-dresden.de)
+- Conference: 2024 IEEE International Conference on Acoustics, Speech and Signal 
+  Processing (submitted)
+- Weblink: [https://2024.ieeeicassp.org/](https://2024.ieeeicassp.org/)
 
 ## Summary and Contents
-This is a template repository for code accompanying a research paper and should allow 
-to reproduce the results from the paper.
+This repository includes the code accompanying the research paper entitled 
+"Separable 2D filters for note onset detection in music signals" to reproduce the results
+from the paper. It presents a novel approach to note onset detection in music signals
+using separable 2D filters applied to mel spectrograms. First it is shown that linear 
+filters achieve equivalent results to the SuperFlux algorithm, which uses nonlinear
+filters. Furthermore, the filter kernels are optimized using Particle Swarm Optimization
+(PSO).
 
-This template provides everything to getting started. and it can directly be used
-for basically any research paper.
+All experiments can either be reproduced in a Python script that can be run locally or on
+a high-performance cluster.
 
-We propose to use the following structure of this README:
-- Title of the paper
-- Metadata:
-    - Metadata contains the author names, journal/conference, weblinks, such as the 
-Digital Object Identifier(DOI)etc.
-- Summary and Contents:
-    - The summary is typically not the abstract of the paper but a summary of what the
-     repo containts.
-     - Take care of the Copyright of the publisher
+
 - File list:
     - The file list contains all files provided in the repository together with a 
     short description.
@@ -32,25 +29,20 @@ Digital Object Identifier(DOI)etc.
     includes your main code. 
     - Very important and often forgotten: How can the data to reproduce the results be
     obtained?
-    - In case of a Jupyter notebook, it is strongly recommended to add a link to 
-    [Binder](https://mybinder.org/).
 - Acknowledgments:
     - Any kind of required funding information 
     - other acknowledgments, such as project partners, contributors, family etc.
-- License:
-    - Reference to the license of your code - how can readers re-use it?
-    - Which defaults?
 - Referencing:
     - How can your work be cited? Ideally, provide a bibtex entry of the paper.
 
 ## File list
 - The following scripts are provided in this repository
     - `scripts/run.sh`: UNIX Bash script to reproduce the Figures in the paper.
-    - `scripts/run_jupyter-lab.sh`: UNIX Bash script to start the Jupyter Notebook for 
-   the paper.
+    - `scripts/run_jupyter.sh`: UNIX Bash script to start the Jupyter Notebook for the
+    paper.
     - `scripts/run.bat`: Windows batch script to reproduce the Figures in the paper.
-    - `scripts/run_jupyter-lab.bat`: Windows batch script to start the Jupyter Notebook 
-  for the paper.
+    - `scripts/run_jupyter.ps1`: Windows batch script to start the Jupyter Notebook for
+    the paper.
 - The following python code is provided in `src`
     - `src/file_handling.py`: Utility functions for storing and loading data and models.
     - `src/preprocessing.py`: Utility functions for preprocessing the dataset
@@ -72,19 +64,13 @@ available [here](https://github.com/github/gitignore).
 
 ## Usage
 The easiest way to reproduce the results is to use a service like 
-[Binder](https://mybinder.org/) and run the Jupyter Notebook (if available). It is 
-nowadays highly recommended, because this does not even require a local installation 
-and Jupyter Notebooks are very intuitive to use.
+[Binder](https://mybinder.org/) and run the Jupyter Notebook (if available).
 
-Do not forget to add a badge from Binder as below. Therefore, you can simply paste the
-link to your Github repository [here](https://mybinder.org/) and Binder will do the 
-rest for you.
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/TUD-STKS/SupplementalCodeTemplate/HEAD?labpath=src%2FExample-Notebook.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/TUD-STKS/sepfir_onset_detection/HEAD)
 
 To run the scripts or to start the Jupyter Notebook locally, at first, please ensure 
 that you have a valid Python distribution installed on your system. Here, at least 
-Python 3.8 is required.
+Python 3.10 is required.
 
 You can then call `run_jupyter-lab.ps1` or `run_jupyter-lab.sh`. This will install a new 
 [Python venv](https://docs.python.org/3/library/venv.html), which is our recommended way 
